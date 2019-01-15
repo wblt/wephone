@@ -37,9 +37,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-
     private final static String TAG = "MainActivity";
-
     @BindView(R.id.account_number)
     EditText accountNumber;
     @BindView(R.id.register)
@@ -64,23 +62,18 @@ public class MainActivity extends AppCompatActivity {
     ListView outputStrings;
     @BindView(R.id.clear_log)
     Button clearLog;
-
     private SipAccountData mSipAccount;
     private static final String KEY_SIP_ACCOUNT = "sip_account";
-
     private int mCurrentCallId = -1; // -1 means no call
     private String mAccountId;
-
     private ArrayAdapter<String> mStatusAdapter;
     private List<String> mStatusStrings = new ArrayList<String>();
-
     SimpleDateFormat mDateFormat   =   new   SimpleDateFormat   ("HH:mm:ss");
-
     // hard code for register info
     private static final String PASSWORD = "2018";
     private static final String HOST = "120.26.104.21";
     private static final long PORT = 26050;
-    private static String USER = "108864281282890368";
+    private static String USER = "108864281282890367";
 
     private BroadcastEventReceiver sipEvents = new BroadcastEventReceiver() {
         @Override
@@ -134,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (callStateCode == pjsip_inv_state.PJSIP_INV_STATE_EARLY) {
                 log = "对方已振铃";
             }
-
             addLog(log + " - " + callStateCode + ", " + (statusCode != null ? statusCode : "null"));// + ", onCallState callStateCode" + callStateCode);
         }
 
@@ -262,7 +254,9 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.hang_up)
     public void onTerminate() {
-        SipServiceCommand.hangUpActiveCalls(this, mSipAccount.getIdUri());
+        if (mSipAccount != null && mSipAccount.getIdUri() != null) {
+            SipServiceCommand.hangUpActiveCalls(this, mSipAccount.getIdUri());
+        }
     }
 
     @OnClick(R.id.answer)

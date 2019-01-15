@@ -193,7 +193,6 @@ public class SipServiceCommand {
      */
     public static void hangUpActiveCalls(Context context, String accountID) {
         checkAccount(accountID);
-
         Intent intent = new Intent(context, SipService.class);
         intent.setAction(ACTION_HANG_UP_CALLS);
         intent.putExtra(PARAM_ACCOUNT_ID, accountID);
@@ -207,7 +206,6 @@ public class SipServiceCommand {
      */
     public static void holdActiveCalls(Context context, String accountID) {
         checkAccount(accountID);
-
         Intent intent = new Intent(context, SipService.class);
         intent.setAction(ACTION_HOLD_CALLS);
         intent.putExtra(PARAM_ACCOUNT_ID, accountID);
@@ -226,7 +224,6 @@ public class SipServiceCommand {
      */
     public static void sendDTMF(Context context, String accountID, int callID, String dtmfTone) {
         checkAccount(accountID);
-
         Intent intent = new Intent(context, SipService.class);
         intent.setAction(ACTION_SEND_DTMF);
         intent.putExtra(PARAM_ACCOUNT_ID, accountID);

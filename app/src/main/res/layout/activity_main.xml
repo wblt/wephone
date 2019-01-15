@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="108864281282890368"
+            android:text="108864281282890367"
             android:hint="Input user name"
             android:inputType="phone" />
         <Button
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:text="18561705213"
+            android:text="01083412733"
             tools:ignore="MissingConstraints" />
         <Button
             android:id="@+id/dial"
