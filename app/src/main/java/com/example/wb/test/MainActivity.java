@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
     private List<String> mStatusStrings = new ArrayList<String>();
     SimpleDateFormat mDateFormat   =   new   SimpleDateFormat   ("HH:mm:ss");
     // hard code for register info
-    private static final String PASSWORD = "2018";
-    private static final String HOST = "120.26.104.21";
-    private static final long PORT = 26050;
-    private static String USER = "108864281282890367";
+    private static final String PASSWORD = "20001";
+    private static final String HOST = "45.76.179.242";
+    private static final long PORT = 2080;
+    private static String USER = "20001";
 
     private BroadcastEventReceiver sipEvents = new BroadcastEventReceiver() {
         @Override

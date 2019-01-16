@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="108864281282890367"
+            android:text="20001"
             android:hint="Input user name"
             android:inputType="phone" />
         <Button
